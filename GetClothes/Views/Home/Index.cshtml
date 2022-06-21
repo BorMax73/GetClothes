@@ -1,0 +1,130 @@
+﻿@model List<GetClothes.ViewModel.ArticleViewModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html lang="uk">
+ <head>
+  <title>Get clothes</title>
+  <meta charset = "utf-8">
+  <link rel="stylesheet" href="market.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700&display=swap" rel="stylesheet">
+ </head>
+ <body>
+
+<header id="header" class="header">
+	<div class="cont">
+		<div class="nav">
+			<a href="/Home"><img src="img/logo.png" alt="Get Clothes"></a>
+			<form asp-controller="Clothes" asp-action="Index">
+  				<input type="text" name="query" placeholder="Пошук...">
+ 				<button type="submit"></button>
+			</form>
+			<ul class="menu">
+				<li>
+					<a href="/Clothes">
+					Асортимент
+					</a>
+				</li>
+				<li>
+					<a href="/Home/Question">
+					Підтримка
+					</a>
+				</li>
+				@*<li>
+					<a href="#">
+					Вхід
+					</a>
+				</li>*@
+			</ul>
+			@*<img src="img/cart.png" alt="Cart">*@
+		</div>
+		<div class="lghtel"></div>
+		<div class="wear">
+		<img src="img/img1.png" alt=" ">
+		</div>
+		<div class="wear1">
+		<img src="img/img2.png" alt=" ">
+		</div>
+		
+		<div class="rul" >
+			<p2>Якісний одяг може бути дешевшим</p2>
+			
+		</div>
+		<div class="info">
+		<p3>Інтернет-магазин вжитого одягу. Одягайся модно, дбаючи про навколишнє середовище;)</p3>
+		</div>
+		
+	</div>
+
+
+</header>
+		
+<section id="list" class="list">
+	<div class="cont">
+		<div class="new">
+			<p1>Новинки</p1>
+		</div>
+		<div class="naf">
+            @foreach (var item in Model)
+            {
+                <a href="/Article?id=@item.Id"><div class="multmod">
+                    <img class="poster" src="data:image/jpeg;base64,@(Convert.ToBase64String(item.Image))" alt=" ">
+                    <p4>@item.Title</p4>
+                    <p5>@item.Price uah</p5>
+                </div></a>
+            }
+		</div>
+	</div>
+</section>
+
+	
+
+<footer id="form" class="form">
+	<div class="cont">
+        <div class="for">
+            <form  asp-action="Subscriber" asp-controller="Home">
+                <div class="fo">
+                    <p6>Підпишись на розсилку</p6>
+                    <p9>і першим отримуй інформацію про знижки і новинки</p9>
+                
+                    <div class="input">
+                        <input type="text" placeholder="Введіть ім`я" name="Name" required class="name">
+                        <input type="email" placeholder="E-mail" name="Email" required class="email">
+               
+                    </div>
+				
+                </div>
+               <input type="submit" value="Підписатися"/>
+			</form>
+			<img src="img/line.png" alt=" ">
+			<div class="fo">
+				<p7>ЗВ'ЯЖІТЬСЯ З НАМИ</p7>
+				<div class="input" >
+					<img src="img/mail.png" alt=" ">
+					<p8>illya.gaidai2001@gmail.com </p8>
+					
+				</div>
+				<div class="input" >
+					<img src="img/phone.png" alt=" ">
+					<p8>+38 (066)-677-37-19 </p8>
+				</div>
+			</div>
+		</div>	
+		<div class="for1">
+			<p10>Ми у соцмережах:</p10>
+			<img src="img/faceb.png" alt=" ">
+			<img src="img/inst.png" alt=" ">
+			<img src="img/tel.png" alt=" ">
+			<p11>©2021 GetClothes . All Rights Reserved.</p11>
+		</div>
+	</div>
+</footer>
+		
+		
+ </body>
+</html>

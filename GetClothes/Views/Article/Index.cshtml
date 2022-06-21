@@ -1,0 +1,168 @@
+﻿
+<!DOCTYPE html>
+<html lang="uk">
+ <head>
+  <title>Штани Kutana storm shell (L)</title>
+  <meta charset = "utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="market.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="~/css/site.css" />
+  </head>
+ <body>
+		
+<header id="header" class="headert">
+	<div class="cont">
+		<div class="nav">
+			<a href="/Home"><img src="img/logo.png" alt="Get Clothes"></a>
+			
+			<ul class="menu">
+				
+				<li>
+					<a href="support.html">
+					Підтримка
+					</a></li>
+				
+			</ul>
+			
+		</div>
+	</div>
+</header>
+
+
+
+
+<section id="list" class="list2">
+	<div class="cont">
+<div class="for3">
+		
+<div class="wrap">
+	<div class="flex" data-gallary>
+		<div class="container">
+			<div class="viewport">
+				<div class="thumbs content-box">
+					@foreach (var item in @ViewBag.Images)
+					{
+					    <img src="data:image/jpeg;base64,@(Convert.ToBase64String(item.Image))" class="ltlthumb">
+					}
+					@*<img src="img/bpant1.png" class="ltlthumb">
+					<img src="img/bpant2.png" class="ltlthumb">*@
+				</div>
+			</div>
+		</div>
+
+		<div>
+			<div class="photo-box">
+				<img src="data:image/jpeg;base64,@(Convert.ToBase64String(@ViewBag.Images[0].Image))" class="sizeimg">
+			</div>
+
+			<div class="flex control-row">
+				<button2 type="button" class="btn" data-control="first">First</button2>
+				<button2 type="button" class="btn" data-control="prev">Previous</button2>
+				<button2 type="button" class="btn" data-control="next">Next</button2>
+				<button2 type="button" class="btn" data-control="last">Last</button2>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script src="goodsgallery.function.js"></script>
+<script src="scrollbox.function.js"></script>
+
+<div class="fo">
+	<nameitm>@ViewBag.Article.Title</nameitm>
+	<prcitm>Ціна:  @ViewBag.Article.Price uah</prcitm>
+	<img src="img/lnlv.png">
+	
+
+	<har>Характеристики:</har>
+	<har2>Розмір:  @ViewBag.ArticleDescription.Size</har2>
+	<har2>Колір:  @ViewBag.ArticleDescription.Color</har2>
+	<har2>Сезон:  @ViewBag.ArticleDescription.Other</har2>
+</div>
+</div>
+
+
+
+
+<img src="img/ln.png">
+
+
+
+		<div class="new">
+			<p1>Інші товари</p1>
+		</div>
+		<div class="naf">
+			
+			<a href="tov2.html"><div class="multmod">
+				<img src="img/img4.png" alt=" ">
+				<p4>ПАНАМКА ARC'TERYX SINSOLO HAT (S-M)</p4>
+				<p5>459 uah</p5>
+			</div></a>
+			<a href="tov3.html"><div class="multmod">
+				<img src="img/img5.png" alt=" ">
+				<p4>ФУТБОЛКА NAVI X LITKOVSKAYA (M)</p4>
+				<p5>329 uah</p5>
+			</div></a>
+			<a href="tov4.html"><div class="multmod">
+				<img src="img/img6.png" alt=" ">
+				<p4>КРОСІВКИ HOKA ONE ONE Mach 4 (42)</p4>
+				<p5>1059 uah</p5>
+			</div></a>
+			<a href="tov5.html"><div class="multmod">
+				<img src="img/img7.png" alt=" ">
+				<p4>КУРТКА KUTANA STORM SHELL (L)</p4>
+				<p5>2499 uah</p5>
+			</div></a>
+			<a href="tov6.html"><div class="multmod">
+				<img src="img/img8.png" alt=" ">
+				<p4>ШАРФ KYIV DWELLER</p4>
+				<p5>209 uah</p5>
+			</div></a>
+		</div>
+		
+	</div>
+</section>
+
+<footer id="form" class="form">
+	<div class="cont">
+		<div class="for">
+			<div class="fo">
+				
+			</div>
+			
+			<div class="fo" style="margin-top:80px; margin-left:330px">
+				<p7>ЗВ'ЯЖІТЬСЯ З НАМИ</p7>
+				<div class="input" >
+					<img src="img/mail.png" alt=" ">
+					<p8>illya.gaidai2001@gmail.com </p8>
+					
+				</div>
+				<div class="input" >
+					<img src="img/phone.png" alt=" ">
+					<p8>+38 (066)-677-37-19 </p8>
+				</div>
+			</div>
+		</div>	
+		<div class="for1" style="margin-top:100px">
+			<p10>Ми у соцмережах:</p10>
+			<a href="https://www.facebook.com/profile.php?id=100010464108378"><img src="img/faceb.png" alt="facebook"></a>
+			<a href="https://www.instagram.com/__hidie__/"><img src="img/inst.png" alt="instagram"></a>
+			<p11>©2021 GetClothes . All Rights Reserved.</p11>
+		</div>
+	</div>
+</footer>
+	
+
+
+
+
+
+ </body>
+</html>
